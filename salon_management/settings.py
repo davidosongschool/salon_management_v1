@@ -91,7 +91,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Must verify email through link
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True #enter twice for no typos 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/' #redirect after login to homepage
+LOGIN_REDIRECT_URL = '/' #redirect after login to
 
 WSGI_APPLICATION = 'salon_management.wsgi.application'
 
