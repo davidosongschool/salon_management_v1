@@ -11,9 +11,19 @@ body {
 background: url('/media/hero.jpg') no-repeat center top fixed;
 background-size: cover;
 min-height: 100vh;
-margin-top: 300px;
+margin-top: 120px;
 }
 
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
 
 
 
