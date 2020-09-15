@@ -1,0 +1,11 @@
+[{
+  "pk": 1,
+  "model": "products.product",
+  "fields": { 
+  "name": "Joico K-Pak Shampoo",
+  "description": "Joico K-Pak Shampoo 300ml",
+  "price": 19.90,
+  "image_url": "https://kida-hair-full.beutifi-website.com/wp-content/uploads/sites/255/2020/09/joico-kpak-shampoo-300ml.jpg"
+  }
+}]
+
