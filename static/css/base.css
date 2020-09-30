@@ -45,11 +45,28 @@ border: 1px solid black !important;
 }
 
 .hero-container {
-height: calc(70vh - 80px);
+min-height: calc(70vh - 80px);
 background-image: url('/media/hero.jpg');
 background-size: cover;
 position: relative;
 }
+
+.left-section-services{
+    min-height: calc(55vh);
+    background-image: url('/media/pink-image.jpg');
+    background-size: cover;
+    position: relative;
+
+}
+
+.right-section-shop{
+    min-height: calc(55vh);
+    background-image: url('/media/gold-image.jpg');
+    background-size: cover;
+    position: relative;
+
+}
+
 
 .shopping-cart-text{
     font-size: 12px;
@@ -76,6 +93,11 @@ z-index: 199999999;
 {position: absolute;
 top: 40%;
 left: 60%;
+}
+.book-btn-container-2
+{position: absolute;
+top: 48%;
+left: 70%;
 }
 .book-btn{
 background-color: #000;
