@@ -1,39 +1,68 @@
-<div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
-                <a href="" class="dropdown-item">All Products</a>
+<div class="row main-nav-row d-none d-lg-flex">
+    <div class="col-4 my-auto pl-5">
+        <h2>BEAUTY4U</h2>
+    </div>
+    <div class="col-4 text-center my-auto">
+        <form method="GET" action="{% url 'products' %}">
+            <div class="input-group w-100">
+                <input class="form-control border border-black rounded-0" type="text" name="q"
+                    placeholder="Search our site">
+                <div class="input-group-append">
+                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
             </div>
-        </li>
+        </form>
+    </div>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Services
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Style</a>
-                <a href="" class="dropdown-item">Colour</a>
-                <a href="" class="dropdown-item">Make Up</a>
-                <a href="" class="dropdown-item">Tanning</a>
-            </div>
-        </li>
+    <!--Main Icons on the Nav Bar-->
+    <div class="col-4 my-auto text-right pr-5 nav-icons">
+        <!--Acocunt Icon-->
+        <a class="" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-user-circle m-2"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <a href="" class="dropdown-item">Salon Management</a>
+            {% endif %}
+            <a href="" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
+        </div>
+        <!--Shopping Cart--> 
+        <a href="">
+               <i class="fas fa-shopping-cart m-2"></i>
+                  <p class="shopping-cart-text"> {% if grand_total %}
+                        €{{ grand_total|floatformat:2 }}
+                    {% else %}
+                        €0.00
+                    {% endif %}
+                </p> 
+        
+        </a>
+       
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
-            </div>
-        </li>
-    </ul>
+    </div>
+</div>
+
+
+<!--MENU BUTTONS-->
+<div class="row menu-buttons d-none d-lg-block">
+<div class="col-12 text-center">
+<ul>
+<li class="d-inline-block ml-3 mr-3">HOME</li>
+<li class="d-inline-block ml-3 mr-3">ABOUT</li>
+<li class="d-inline-block ml-3 mr-3">OUR SERVICES</li>
+<li class="d-inline-block ml-3 mr-3">BOOKING</li>
+<li class="d-inline-block ml-3 mr-3">CONTACT</li>
+<li class="d-inline-block ml-3 mr-3">SHOP</li>
+</ul>
+</div>
 </div>
